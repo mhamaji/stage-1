@@ -1,0 +1,320 @@
+:root {
+  --black: #32424A;
+  --grey: #F5F5F5;
+  --teal: #01ECD5;
+  --shadow: #dddddd;
+  --blue: #4586FF;
+}
+
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* background-color: #fefefe; */
+  background-color: var(--grey);
+}
+
+/* Página inicial */
+
+.full-page-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+}
+
+.page-start {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--grey);
+  display: flex;
+  align-items: flex-end;
+  border-right: var(--grey) solid 24px;
+  box-sizing: border-box;
+}
+
+.page-start-title {
+  font-size: 120px;
+}
+
+.page-title {
+  font-size: 120px;
+}
+
+.page-text {
+  font-size: 24px;
+  width: 420px;
+}
+
+.title-margin {
+  margin-top: 64px;
+}
+
+.right {
+  text-align: right;
+}
+
+.page-start-icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  padding-bottom: 8px;
+  animation-name: glowicon;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; 
+}
+
+@keyframes glowicon {
+  0% {
+    color: var(--teal);
+    margin-bottom: 0;
+  }
+  
+  50% {
+    color: var(--grey);
+    margin-bottom: 8px;
+  }
+  
+  100% {
+    color: var(--teal);
+    margin-bottom: 0;
+  }
+}
+
+.page-start-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 16px;
+  align-items: baseline;
+  margin-bottom: 48px;
+}
+
+.page-section {
+  padding: 16px 0;
+  width: 100%;
+  border-right: var(--black) solid 24px;
+  box-sizing: border-box;
+  color: var(--black);
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.easter {
+  position: relative;
+}
+
+.egg {
+  cursor: pointer;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.easter-smile {
+  display: inline-block;
+}
+
+.egg:hover .easter > .easter-smile{
+  animation-name: disappear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.easter-wink {
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.image-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1.8px solid;
+  position: fixed;
+  left: 16px;
+  bottom: -200px;
+}
+
+@keyframes slide {
+  to {
+    transform: translate(0, -216px);
+  }
+}
+
+.image-container:hover .image {
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.anchor-recolor {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+.page-grid {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 176px);
+  width: 60%;
+  margin: 8px auto;
+  margin-top: 64px;
+}
+
+.page-grid-box {
+  text-align: right;
+  background-color: var(--grey);
+  color: var(--black);
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 1.5px 1.5px 1.5px var(--black);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@keyframes holdcard {  
+  to {
+    transform: translate(-4px, -4px);
+  }
+}
+
+.page-grid-box:hover {
+  animation-fill-mode: forwards;
+  animation-name: holdcard;
+  animation-duration: 1s;
+}
+
+.wagon {
+  grid-row: span 2;
+}
+
+.horta {
+  grid-row: span 2;
+  grid-column: 2;
+}
+
+.trybe {
+  grid-row: span 2;
+  grid-column: 1;
+}
+
+.black {
+  background-color: var(--black);
+  color: var(--grey);
+}
+
+.blue {
+  background-color: var(--blue);
+  color: var(--black);
+  border-right: var(--grey) solid 24px;
+}
+
+.inverted {
+  background-color: var(--black);
+  color: var(--grey);
+  border-right: var(--blue) solid 24px;
+}
+
+.contact-info {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+ .container {
+  width: 96%;
+ }
+
+ .page-grid {
+  width: 100%;
+ }
+}
+
+@media screen and (max-width: 768px) {
+  .page-start-container {
+    flex-direction: column;
+  }
+
+  .page-title {
+    font-size: 80px;
+  }
+
+  .page-grid {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .page-grid-box-empty {
+    display: none;
+  }
+
+  .wagon {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .horta {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .trybe {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .page-section {
+    border-right-width: 16px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-title {
+    font-size: 32px;
+  }
+
+  .title-margin {
+    margin-top: 32px;
+  }
+
+  .page-text {
+    font-size: 16px;
+    width: auto;
+    padding: 8px;
+  }
+
+  .page-section {
+    border-right-width: 4px !important;
+  }
+}
