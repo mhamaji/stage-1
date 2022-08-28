@@ -297,6 +297,10 @@ body {
   .page-section {
     border-right-width: 16px !important;
   }
+
+  .page-start {
+    border-right-width: 16px !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -315,6 +319,10 @@ body {
   }
 
   .page-section {
+    border-right-width: 4px !important;
+  }
+
+  .page-start {
     border-right-width: 4px !important;
   }
 }
