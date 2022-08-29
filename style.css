@@ -265,6 +265,14 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .page-start {
+    align-items: center;
+  }
+
+  .page-start-icon {
+    bottom: 0;
+  }
+
   .page-start-container {
     flex-direction: column;
   }
